@@ -86,6 +86,24 @@ function user_data() {
   }
 }
 
+function homepage_auctions() {
+  global $conn;
+  $sql = "SELECT auctions.id, items.image, items.title, auctions.expiration
+  FROM auctions
+  JOIN items
+  ON auctions.items_id = items.id";
+  $result = mysqli_query($conn, $sql);
+  if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+      echo '<tr>
+       <td>'.$row['id'].'</td>
+       <td>'.$row['title'].'</td>
+       <td>'. '<a href="single_auction.php?aucid='.$row['id'].'">see info here</a>'.'</td>
+     </tr>';
+    }
+  }
+}
+
 //debug funktion til at tjekke data på en variable
 function debug($data) {
   echo '<pre>';

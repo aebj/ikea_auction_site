@@ -15,7 +15,7 @@ debug($_SESSION['username']);
    </head>
    <body>
      <div class="main_content">
-       <?php active_auctions() ?>
+       <?php homepage_auctions(); ?>
      </div>
    </body>
  </html>
