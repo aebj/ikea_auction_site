@@ -22,7 +22,7 @@ if (isset($_POST['create_user_button'])) {
  <html lang="en" dir="ltr">
    <head>
      <meta charset="utf-8">
-     <title>Signup</title>
+     <title>Opret bruger</title>
    </head>
    <body>
      <h1>Opret bruger</h1>
@@ -34,9 +34,9 @@ if (isset($_POST['create_user_button'])) {
        <label for="">Efternavn:</label><br>
        <input type="text" name="lname" value="" placeholder="Efternavn" required> <br><br>
        <label for="">Mobilnummer:</label><br>
-       <input type="text" name="phone_no" value="" placeholder="Mobilnummer" required> <br><br>
+       <input type="number" name="phone_no" value="" placeholder="Mobilnummer" required> <br><br>
        <label for="">Email:</label><br>
-       <input type="text" name="email" value="" placeholder="Email adresse" required> <br><br>
+       <input type="email" name="email" value="" placeholder="Email adresse" required> <br><br>
        <label for="">Adgangskode:</label><br>
        <input type="password" name="password" value="" placeholder="Adgangskode" required> <br><br>
        <button type="submit" name="create_user_button">Opret bruger</button>

@@ -10,7 +10,7 @@ include('template/footer.php');
  <html lang="en" dir="ltr">
    <head>
      <meta charset="utf-8">
-     <title></title>
+     <title>Din auktioner</title>
    </head>
    <body>
      <div class="main_content">
