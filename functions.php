@@ -14,5 +14,16 @@ $conn = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
 
 // Tester om der er fejl i databaseforbindelse (Stopper eksekvering)
 if(!$conn) {
-  die("Forbindelsen fejlede" . mysqli_error($conn)); 
+  die("Forbindelsen fejlede" . mysqli_error($conn));
+}
+
+
+
+
+
+//debug funktion til at tjekke data på en variable
+function debug($data) {
+  echo '<pre>';
+  print_r($data);
+  echo '</pre>';
 }
