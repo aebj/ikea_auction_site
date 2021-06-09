@@ -1,9 +1,10 @@
 <?php
 
-
+include('functions.php');
+include('template/navbar.php');
+include('template/footer.php');
 
  ?>
-
 
  <!DOCTYPE html>
  <html lang="en" dir="ltr">
@@ -12,6 +13,6 @@
      <title></title>
    </head>
    <body>
-
+<h1>hej</h1>
    </body>
  </html>
