@@ -4,8 +4,6 @@ session_start()
 
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -20,7 +18,11 @@ session_start()
         <a href="categories.php">Kategorier</a>
         <a href="create_auction.php">Opret auktion</a>
         <a href="profile.php">Dine auktioner</a>
-        <a href="login.php">Log ind</a>
+        <?php if (isset($_SESSION['username'])): ?>
+          <a href="logout.php">Log ud</a>
+          <?php else: ?>
+            <a href="login.php">Log ind</a>
+        <?php endif; ?>
       </div>
     </div>
   </body>
