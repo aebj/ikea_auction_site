@@ -5,6 +5,7 @@ include('template/navbar.php');
 include('template/footer.php');
 
 debug($_SESSION['username']);
+
  ?>
 
  <!DOCTYPE html>
@@ -16,6 +17,9 @@ debug($_SESSION['username']);
    <body>
      <div class="main_content">
        <?php homepage_auctions(); ?>
+
+
      </div>
+     <?php include('template/footer.php'); ?>
    </body>
  </html>
