@@ -17,8 +17,16 @@ include('template/footer.php');
      <form class="" action="index.html" method="post"
      <label for="">Titel:</label><br>
      <input type="text" name="title" value="" placeholder="Titel"> <br><br>
-     <label for="">Kategori:</label><br>
-     <input type="text" name="cat" value="" placeholder="Kategori"> <br><br>
+
+     <label for="category_id">Kategori:</label><br>
+     <select id="category_id" name="category_id">
+       <?php foreach(select_category() as $category) { ?>
+       <option value="<?php echo $category['id']; ?>">
+         <?php echo $category['category']; ?>
+       </option>
+       <?php } ?>
+     </select><br><br>
+
      <label for="">Beskrivelse:</label><br>
      <input type="text" name="describtion" value="" placeholder="Beskrivelse"> <br><br>
      <label for="">Minimumspris:</label><br>
