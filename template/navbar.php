@@ -13,7 +13,7 @@ session_start()
   </head>
   <body>
     <div class="navbar">
-      <a class="logo" href="homepage.php" >IKEA Auktion</a>
+      <a class="logo" href="homepage.php" >IKEA<br><br>Auktion</a>
       <div class="navbar-right">
         <a href="categories.php">Kategorier</a>
         <a href="create_auction.php">Opret auktion</a>
