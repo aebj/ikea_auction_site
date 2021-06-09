@@ -4,6 +4,7 @@ include('functions.php');
 include('template/navbar.php');
 include('template/footer.php');
 
+debug($_SESSION['username']);
  ?>
 
  <!DOCTYPE html>
