@@ -66,7 +66,8 @@ function select_category() {
 
 function user_data() {
   global $conn;
-  $sql = "SELECT users.username, users.first_name, users.last_name, users.phone_no, users.email FROM users";
+  $username = $_SESSION['username'];
+  $sql = "SELECT username, first_name, last_name, phone_no, email FROM users WHERE username = '$username'";
   $result = mysqli_query($conn, $sql);
   if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {

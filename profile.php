@@ -14,7 +14,7 @@ include('template/footer.php');
    </head>
    <body>
      <div class="main_content">
-       <?php user_data() ?>
+       <?php user_data(); ?>
      </div>
 Her kan den enkelte bruger se et overblik over ens profil samt aktive og vundne auktioner
    </body>
