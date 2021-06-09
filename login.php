@@ -36,20 +36,21 @@ include('template/footer.php');
    </head>
    <body>
      <div class="container">
-     <form method="post" action="">
-         <div class="login">
-             <h1>Log ind</h1>
-             <div>
-                 <input type="text" name="username" placeholder="Brugernavn">
-             </div>
-             <div>
-                 <input type="password" name="password" placeholder="Adgangskode">
-             </div>
-             <div>
-                 <input type="submit" value="Log ind" name="login_button">
-             </div>
-         </div>
-     </form>
+       <form method="post" action="">
+          <div class="login">
+            <h1>Log ind</h1>
+              <div>
+                <input type="text" name="username" placeholder="Brugernavn">
+              </div>
+              <div>
+                <input type="password" name="password" placeholder="Adgangskode">
+              </div>
+              <div>
+                <input type="submit" value="Log ind" name="login_button">
+              </div>
+            </div>
+          </form>
+          <a href="signup.php">Opret bruger</a>
      </div>
    </body>
  </html>
