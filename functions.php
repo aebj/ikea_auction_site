@@ -64,6 +64,27 @@ function select_category() {
   return $category;
 }
 
+function user_data() {
+  global $conn;
+  $sql = "SELECT users.username, users.first_name, users.last_name, users.phone_no, users.email FROM users";
+  $result = mysqli_query($conn, $sql);
+  if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+      echo "<tr>
+      <td>". $row["username"] ."</td>
+      <td>". $row["first_name"] ."</td>
+      <td>". $row["last_name"] ."</td>
+      <td>". $row["phone_no"] ."</td>
+      <td>". $row["email"] ."</td>
+      </tr>";
+    }
+    echo "</table>";
+  }
+  else {
+    echo "0 result";
+  }
+}
+
 //debug funktion til at tjekke data på en variable
 function debug($data) {
   echo '<pre>';
