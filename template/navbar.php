@@ -13,14 +13,14 @@ session_start()
   </head>
   <body>
     <div class="navbar">
-      <a class="logo" href="homepage.php" >IKEA<br><br>Auktion</a>
+      <a class="logo" href="homepage.php" >IKEA Auktion</a>
       <div class="navbar-right">
         <a href="categories.php">Kategorier</a>
         <a href="create_auction_item.php">Opret auktion</a>
         <?php if (isset($_SESSION['username'])): ?>
         <a href="profile.php">Dine auktioner</a>
           <?php else: ?>
-        <?php endif; ?>  
+        <?php endif; ?>
         <?php if (isset($_SESSION['username'])): ?>
           <a href="logout.php">Log ud</a>
           <?php else: ?>
