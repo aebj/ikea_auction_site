@@ -50,3 +50,7 @@ html {
     letter-spacing: 0.04em;
     text-align: center;
 }
+
+.dropdownmenu_cat {
+  float: right;
+}

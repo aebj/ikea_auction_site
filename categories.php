@@ -15,7 +15,7 @@ include('template/footer.php');
    </head>
    <body>
      <div id="product-container">
-       <form class="" action="categories.php" method="post">
+       <form class="dropdownmenu_cat" action="categories.php" method="post">
          <select class="" name="category">
            <?php foreach (select_category() as $dropdown_category) { ?>
              <option value="<?php echo $dropdown_category['id']; ?>">
