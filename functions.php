@@ -64,27 +64,6 @@ function select_category() {
   return $category;
 }
 
-function user_data() {
-  global $conn;
-  $username = $_SESSION['username'];
-  $sql = "SELECT username, first_name, last_name, phone_no, email FROM users WHERE username = '$username'";
-  $result = mysqli_query($conn, $sql);
-  if (mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-      echo "<tr>
-      <td>". $row["username"] ."</td>
-      <td>". $row["first_name"] ."</td>
-      <td>". $row["last_name"] ."</td>
-      <td>". $row["phone_no"] ."</td>
-      <td>". $row["email"] ."</td>
-      </tr>";
-    }
-    echo "</table>";
-  }
-  else {
-    echo "0 result";
-  }
-}
 
 function homepage_auctions() {
   global $conn;
