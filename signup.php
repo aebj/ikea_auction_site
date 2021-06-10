@@ -12,7 +12,7 @@ if (isset($_POST['create_user_button'])) {
   $email = $_POST['email'];
   $password = $_POST['password'];
 
-  $sql_query = "INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `phone_no`, `email`, `password`) VALUES (NULL, '$firstname', '$lastname', '$username', '$phone_no', '$email', '$password')";
+  $sql = "INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `phone_no`, `email`, `password`) VALUES (NULL, '$firstname', '$lastname', '$username', '$phone_no', '$email', '$password')";
   $run = mysqli_query($conn, $sql_query) or die();
   header('location: login.php');
 }
