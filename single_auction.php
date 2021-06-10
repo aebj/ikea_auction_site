@@ -4,8 +4,6 @@ include('functions.php');
 include('template/navbar.php');
 include('template/footer.php');
 
-debug($_SESSION['username']);
-
  ?>
 
  <!DOCTYPE html>
@@ -53,7 +51,6 @@ debug($_SESSION['username']);
           if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
               $highest_bid = $row['highest_bid'];
-              //debug($highest_bid);
             }
           }
           ?>
@@ -69,7 +66,6 @@ debug($_SESSION['username']);
               if (isset($_POST['bid_button'])) {
                 if ($_POST['bid_amount'] > $highest_bid) {
                   $bid_amount = $_POST['bid_amount'];
-                  //debug($bid_amount);
                   $user_id = $row['id'];
                   $sql = "INSERT INTO bids (id, amount, created_at, auctions_id, users_id) VALUES (NULL, '$bid_amount', CURRENT_TIMESTAMP, '$id', '$user_id')";
                   $run = mysqli_query($conn, $sql);

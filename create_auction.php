@@ -38,21 +38,15 @@ if (isset($_POST['create_item_button'])) {
   $description = $_POST['description'];
   $category_id = $_POST['category_id'];
 
-debug($title);
-debug($description);
-debug($category_id);
-
   $sql = "INSERT INTO `items` (`id`, `title`, `description`, `image`, `cat_id`) VALUES (NULL, '$title', '$description', '$file_name', '$category_id')";
   $run = mysqli_query($conn, $sql) or die();
   $last_id = mysqli_insert_id($conn);
-debug($last_id);
 }
 
 if (isset($_POST['create_auction_button'])) {
   $min_price = $_POST['min_price'];
   $expiration = $_POST['expiration'];
   $items_id = $_POST['items_id'];
-      debug($items_id);
   $username = $_SESSION['username'];
   $sql = "SELECT id, username FROM users WHERE username='$username'";
   $result = mysqli_query($conn, $sql);
