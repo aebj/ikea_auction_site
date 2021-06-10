@@ -12,7 +12,7 @@ debug($_SESSION['username']);
  <html lang="en" dir="ltr">
    <head>
      <meta charset="utf-8">
-     <title></title>
+     <title>Forside</title>
    </head>
    <body>
      <div class="main_content">
