@@ -37,18 +37,17 @@ include('template/footer.php');
      </div>
 
      <div class="profile_data">
+       <h3>Aktive auktioner</h3>
        <table>
          <tr>
-           <th>Titel</th>
-           <th>Udløbstidspunkt</th>
-           <th>Højeste bud</th>
+           <th>Titel<hr></th>
+           <th>Udløbstidspunkt<hr></th>
+           <th>Højeste bud<hr></th>
          </tr>
+         <?php active_auctions(); ?>
        </table>
-      <a> <?php profile_auction(); ?></a>
-
     </div>
-
-
+    
 <?php
 }
 

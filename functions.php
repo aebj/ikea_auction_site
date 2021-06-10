@@ -66,7 +66,7 @@ function homepage_auctions() {
 }*/
 
 
-function profile_auction() {
+function active_auctions() {
   global $conn;
   $sql = "SELECT items.title, auctions.expiration, MAX(bids.amount) AS highest_bid
   FROM items
@@ -87,6 +87,7 @@ function profile_auction() {
     }
   }
 }
+
 
 function select_category(){
   global $conn;
