@@ -26,7 +26,6 @@ include('template/footer.php');
         <img src="images/<?php echo $row['image'] ?>" alt="Billede mangler">
         <p>Minimums pris: <?php echo $row['minimum_price'] ?></p>
         <p><?php echo $row['description'] ?></p>
-
         <h1><?php echo $row['title'] ?></h1>
           <?php
             $countdown = strtotime($row['expiration']);
@@ -39,9 +38,9 @@ include('template/footer.php');
           ?>
           <h2><?php echo "Auktion slutter om " . $days_remaining . " dage, " . $hours_remaining . " timer og " . $minutes_remaining . " minuter" ?></h2>
           <h3>Slut dato: <?php echo $row['expiration'] ?></h3>
-        <form class="" action="single_auction.php?aucid=<?php echo $_GET['aucid'] ?>" method="post">
-          <input type="number" name="bid_amount" value="" placeholder="Give bud her">
-          <button type="submit" name="bid_button">Giv bud</button>
+          <form class="" action="single_auction.php?aucid=<?php echo $_GET['aucid'] ?>" method="post">
+            <input type="number" name="bid_amount" value="" placeholder="Give bud her">
+            <button type="submit" name="bid_button">Giv bud</button>
           <?php
           $username = $_SESSION['username'];
           $sql_query = "SELECT id, username FROM users WHERE username='$username'";

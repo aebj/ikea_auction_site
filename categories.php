@@ -20,7 +20,6 @@ include('template/footer.php');
              <option value="<?php echo $dropdown_category['id']; ?>">
               <?php echo $dropdown_category['category']; ?>
              </option>
-             <?php debug($dropdown_category); ?>
            <?php } ?>
          </select>
          <button type="submit" name="category_button">Vælg Kategori</button>
@@ -49,10 +48,6 @@ include('template/footer.php');
           }
         }
         ?>
-
-
-
-
      <?php include('template/footer.php'); ?>
    </body>
  </html>
