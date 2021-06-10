@@ -15,8 +15,6 @@ if(isset($_FILES['image'])){
    $file_ext=end($file_ext);
    $file_ext=strtolower($file_ext);
 
-   /*(end(explode('.',$_FILES['image']['name'])));*/
-
    $extensions= array("jpeg","jpg","png");
 
    if(in_array($file_ext,$extensions)=== false){

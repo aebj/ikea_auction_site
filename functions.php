@@ -17,7 +17,7 @@ if(!$conn) {
   die("Forbindelsen fejlede" . mysqli_error($conn));
 }
 
-function active_auctions() {
+/*function active_auctions() {
   global $conn;
   $sql = "SELECT auctions.id, items.image, items.title, auctions.expiration, MAX(bids.amount) AS highest_bid
 FROM auctions
@@ -41,7 +41,7 @@ GROUP BY auctions_id";
   else {
     echo "0 result";
   }
-}
+}*/
 
 function select_category() {
   global $conn;
@@ -64,7 +64,7 @@ function select_category() {
   return $category;
 }
 
-
+/*
 function homepage_auctions() {
   global $conn;
   $sql = "SELECT auctions.id, items.image, items.title, auctions.expiration
@@ -75,13 +75,13 @@ function homepage_auctions() {
   if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
       echo '<tr>
-       <td>'.$row['id'].'</td>
-       <td>'.$row['title'].'</td>
-       <td>'. '<a href="single_auction.php?aucid='.$row['id'].'">see info here</a>'.'</td>
+       <td>'.$row['image'].'</td><br>
+       <td>'.$row['title'].'</td><br>
+       <td>'. '<a href="single_auction.php?aucid='.$row['id'].'">see info here</a>'.'</td><br>
      </tr>';
     }
   }
-}
+}*/
 
 
 function profile_auction() {
