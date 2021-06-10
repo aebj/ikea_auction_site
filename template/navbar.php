@@ -17,7 +17,10 @@ session_start()
       <div class="navbar-right">
         <a href="categories.php">Kategorier</a>
         <a href="create_auction_item.php">Opret auktion</a>
+        <?php if (isset($_SESSION['username'])): ?>
         <a href="profile.php">Dine auktioner</a>
+          <?php else: ?>
+        <?php endif; ?>  
         <?php if (isset($_SESSION['username'])): ?>
           <a href="logout.php">Log ud</a>
           <?php else: ?>

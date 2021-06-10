@@ -4,6 +4,12 @@ include('functions.php');
 include('template/navbar.php');
 include('template/footer.php');
 
+if ( isset( $_SESSION['username'] ) ) {
+}
+  else {
+    header("Location: homepage.php");
+  }
+
  ?>
 
  <!DOCTYPE html>
