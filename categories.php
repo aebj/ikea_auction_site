@@ -10,10 +10,11 @@ include('template/footer.php');
  <html lang="en" dir="ltr">
    <head>
      <meta charset="utf-8">
+     <link rel="stylesheet" href="css/homepage.css">
      <title>Kategorier</title>
    </head>
    <body>
-     <div class="main_content">
+     <div id="product-container">
        <form class="" action="categories.php" method="post">
          <select class="" name="category">
            <?php foreach (select_category() as $dropdown_category) { ?>
@@ -39,7 +40,7 @@ include('template/footer.php');
        $result = mysqli_query($conn, $sql);
        if (mysqli_num_rows($result) > 0) {
          while ($row = mysqli_fetch_assoc($result)) { ?>
-           <div class="main_content">
+           <div id="product-container">
            <img src="images/<?php echo $row['image'] ?>">
            <h2><?php echo $row['title']; ?></h2>
            <p><?php echo $row['expiration'] ?></p>
@@ -56,7 +57,7 @@ include('template/footer.php');
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 0) {
           while ($row = mysqli_fetch_assoc($result)) { ?>
-            <div class="main_content">
+            <div id="product-container">
               <img src="images/<?php echo $row['image'] ?>">
               <h2><?php echo $row['title']; ?></h2>
               <p><?php echo $row['expiration'] ?></p>

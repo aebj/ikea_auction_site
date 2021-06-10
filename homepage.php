@@ -4,10 +4,6 @@ include('functions.php');
 include('template/navbar.php');
 include('template/footer.php');
 
-debug($_SESSION['username']);
-
-
-
  ?>
 
  <!DOCTYPE html>
@@ -28,12 +24,10 @@ debug($_SESSION['username']);
        if (mysqli_num_rows($result) > 0) {
          while ($row = mysqli_fetch_assoc($result)) { ?>
            <div id="product-container">
-             <div class="main_content">
                <img src="images/<?php echo $row['image'] ?>">
                <h2><?php echo $row['title']; ?></h2>
                <p><?php echo $row['expiration'] ?></p>
-               <a href="single_auction.php?aucid= <?php echo $row['id']?>">Se mere information her</a><br>
-             </div>
+               <a href="single_auction.php?aucid= <?php echo $row['id']?>">Se mere information her</a>
             </div>
           </main>
           <?php
