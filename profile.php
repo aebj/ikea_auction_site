@@ -35,11 +35,20 @@ include('template/footer.php');
        <li>E-mail</li>
        <ul><?php echo $row['email']; ?> </ul>
      </div>
-     <div>
-       <?php profile_auction(); ?>
+
+     <div class="profile_data">
+       <table>
+         <tr>
+           <th>Titel</th>
+           <th>Udløbstidspunkt</th>
+           <th>Højeste bud</th>
+         </tr>
+       </table>
+      <a> <?php profile_auction(); ?></a>
+
     </div>
 
-Her kan den enkelte bruger se et overblik over ens profil samt aktive og vundne auktioner
+
 <?php
 }
 

@@ -1,1 +1,9 @@
 
+.profile_data{
+  border: 1px solid black;
+  border-spacing: 50px;
+  padding: 25px;
+  background-color: #0055A3;
+  float: right;
+
+}
