@@ -11,7 +11,7 @@ include('template/footer.php');
    <head>
      <meta charset="utf-8">
      <link rel="stylesheet" href="css/profile.css">
-     <title>Profil</title>
+     <title>Dine auktioner</title>
    </head>
    <body>
      <?php $username = $_SESSION['username'];
