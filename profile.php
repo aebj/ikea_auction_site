@@ -20,7 +20,6 @@ if ( isset( $_SESSION['username'] ) ) {
      <title>Dine auktioner</title>
    </head>
    <body>
-
      <?php $username = $_SESSION['username'];
      $sql = "SELECT username, first_name, last_name, phone_no, email FROM users WHERE username = '$username'";
      $result = mysqli_query($conn, $sql);
@@ -30,18 +29,13 @@ if ( isset( $_SESSION['username'] ) ) {
      <h1>Din profil</h1>
 
      <div class="profile">
-       <li>Brugernavn</li>
-       <ul><?php echo $row['username']; ?> </ul>
-       <li>Fornavn</li>
-       <ul><?php echo $row['first_name']; ?> </ul>
-       <li>Efternavn</li>
-       <ul><?php echo $row['last_name']; ?> </ul>
-       <li>Telefonnummer</li>
-       <ul><?php echo $row['phone_no']; ?> </ul>
-       <li>E-mail</li>
-       <ul><?php echo $row['email']; ?> </ul>
+       <ul><strong>Brugernavn:</strong> <?php echo $row['username']; ?> </ul>
+       <ul><strong>Fornavn:</strong> <?php echo $row['first_name']; ?> </ul>
+       <ul><strong>Efternavn:</strong> <?php echo $row['last_name']; ?> </ul>
+       <ul><strong>Telefonnummer:</strong> <?php echo $row['phone_no']; ?> </ul>
+       <ul><strong>E-mail:</strong> <?php echo $row['email']; ?> </ul>
      </div>
-
+     </table>
      <div class="profile_data">
        <h3>Aktive auktioner</h3>
         <table>

@@ -15,16 +15,15 @@ include('template/footer.php');
    </head>
    <body>
      <div id="product-container">
-       <form class="dropdownmenu_cat" action="categories.php" method="post">
+       <form class="cat_dropdown" action="categories.php" method="post">
          <select class="" name="category">
            <?php foreach (select_category() as $dropdown_category) { ?>
              <option value="<?php echo $dropdown_category['id']; ?>">
               <?php echo $dropdown_category['category']; ?>
              </option>
-
            <?php } ?>
          </select>
-         <button type="submit" name="category_button">Vælg Kategori</button>
+         <button class="cat_button" type="submit" name="category_button">Vælg Kategori</button>
        </form>
        <?php
        if (isset($_POST['category_button'])) {
