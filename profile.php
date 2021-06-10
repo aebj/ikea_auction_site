@@ -38,20 +38,15 @@ include('template/footer.php');
 
      <div class="profile_data">
        <h3>Aktive auktioner</h3>
-       <table>
-         <tr>
-           <th>Titel<hr></th>
-           <th>Udløbstidspunkt<hr></th>
-           <th>Højeste bud<hr></th>
-         </tr>
+        <table>
+          <tr>
+             <th>Titel<hr></th>
+             <th>Udløbstidspunkt<hr></th>
+             <th>Højeste bud<hr></th>
+           </tr>
          <?php active_auctions(); ?>
        </table>
-    </div>
-    
-<?php
-}
-
-}
-?>
+     </div>
+    <?php } } ?>
    </body>
  </html>

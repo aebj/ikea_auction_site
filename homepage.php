@@ -19,10 +19,7 @@ debug($_SESSION['username']);
    </head>
    <body>
      <main>
-
-
        <?php
-
        $sql = "SELECT auctions.id, items.image, items.title, auctions.expiration
        FROM auctions
        JOIN items
@@ -31,18 +28,18 @@ debug($_SESSION['username']);
        if (mysqli_num_rows($result) > 0) {
          while ($row = mysqli_fetch_assoc($result)) { ?>
            <div id="product-container">
-           <div class="main_content">
-           <img src="images/<?php echo $row['image'] ?>">
-           <h2><?php echo $row['title']; ?></h2>
-           <p><?php echo $row['expiration'] ?></p>
-           <a href="single_auction.php?aucid= <?php echo $row['id']?>">Se mere information her</a><br>
-         </div>
-         </main>
-            <?php
-          }
+             <div class="main_content">
+               <img src="images/<?php echo $row['image'] ?>">
+               <h2><?php echo $row['title']; ?></h2>
+               <p><?php echo $row['expiration'] ?></p>
+               <a href="single_auction.php?aucid= <?php echo $row['id']?>">Se mere information her</a><br>
+             </div>
+            </div>
+          </main>
+          <?php
         }
-        ?>
-
+      }
+      ?>
      <?php include('template/footer.php'); ?>
    </body>
  </html>

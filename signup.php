@@ -26,20 +26,20 @@ if (isset($_POST['create_user_button'])) {
    </head>
    <body>
      <h1>Opret bruger</h1>
-     <form class="" action="signup.php" method="post">
-       <label for="">Brugernavn:</label><br>
-       <input type="text" name="username" value="" placeholder="Bugernavn" required> <br><br>
-       <label for="">Fornavn:</label><br>
-       <input type="text" name="fname" value="" placeholder="Fornavn" required> <br><br>
-       <label for="">Efternavn:</label><br>
-       <input type="text" name="lname" value="" placeholder="Efternavn" required> <br><br>
-       <label for="">Mobilnummer:</label><br>
-       <input type="number" name="phone_no" value="" placeholder="Mobilnummer" required> <br><br>
-       <label for="">Email:</label><br>
-       <input type="email" name="email" value="" placeholder="Email adresse" required> <br><br>
-       <label for="">Adgangskode:</label><br>
-       <input type="password" name="password" value="" placeholder="Adgangskode" required> <br><br>
-       <button type="submit" name="create_user_button">Opret bruger</button>
-     </form>
-   </body>
- </html>
+        <form class="" action="signup.php" method="post">
+          <label for="">Brugernavn:</label><br>
+          <input type="text" name="username" value="" placeholder="Bugernavn" required> <br><br>
+          <label for="">Fornavn:</label><br>
+          <input type="text" name="fname" value="" placeholder="Fornavn" required> <br><br>
+          <label for="">Efternavn:</label><br>
+          <input type="text" name="lname" value="" placeholder="Efternavn" required> <br><br>
+          <label for="">Mobilnummer:</label><br>
+          <input type="number" name="phone_no" value="" placeholder="Mobilnummer" required> <br><br>
+          <label for="">Email:</label><br>
+          <input type="email" name="email" value="" placeholder="Email adresse" required> <br><br>
+          <label for="">Adgangskode:</label><br>
+          <input type="password" name="password" value="" placeholder="Adgangskode" required> <br><br>
+          <button type="submit" name="create_user_button">Opret bruger</button>
+        </form>
+      </body>
+    </html>

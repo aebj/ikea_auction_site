@@ -26,7 +26,6 @@ include('template/footer.php');
         <img src="images/<?php echo $row['image'] ?>" alt="Billede mangler">
         <p>Minimums pris: <?php echo $row['minimum_price'] ?></p>
         <p><?php echo $row['description'] ?></p>
-
         <h1><?php echo $row['title'] ?></h1>
           <?php
             $countdown = strtotime($row['expiration']);
