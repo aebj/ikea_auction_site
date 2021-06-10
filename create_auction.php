@@ -10,7 +10,12 @@ if(isset($_FILES['image'])){
    $file_size =$_FILES['image']['size'];
    $file_tmp =$_FILES['image']['tmp_name'];
    $file_type=$_FILES['image']['type'];
-   $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
+
+   $file_ext=explode('.',$_FILES['image']['name']);
+   $file_ext=end($file_ext);
+   $file_ext=strtolower($file_ext);
+
+   /*(end(explode('.',$_FILES['image']['name'])));*/
 
    $extensions= array("jpeg","jpg","png");
 
@@ -24,7 +29,7 @@ if(isset($_FILES['image'])){
 
    if(empty($errors)==true){
       move_uploaded_file($file_tmp,"images/".$file_name);
-      echo "Success";
+      echo "Det lykkedes";
    }else{
       print_r($errors);
    }
@@ -73,7 +78,7 @@ if (isset($_post["create_auction_button"])) {
      <input type="date" name="end_time" value="" placeholder="Udløbstidspunkt"> <br><br>
      </form>
 
-     <form action = "" method = "POST" enctype = "multipart/form-data">
+     <form action = "" method = "POST" enctype = "multipart/form-data" required>
         <input type = "file" name = "image" />
         <input type = "submit"/>
 
