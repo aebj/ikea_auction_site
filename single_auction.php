@@ -39,6 +39,23 @@ include('template/footer.php');
           ?>
           <h2><?php echo "Auktion slutter om " . $days_remaining . " dage, " . $hours_remaining . " timer og " . $minutes_remaining . " minuter" ?></h2>
           <h3>Slut dato: <?php echo $row['expiration'] ?></h3>
+          <?php
+          $sql_query = "SELECT auctions.id, items.image, items.title, auctions.expiration, MAX(bids.amount) AS highest_bid
+          FROM auctions
+          JOIN items
+          ON auctions.items_id = items.id
+          JOIN bids
+          ON bids.auctions_id = auctions.id
+          WHERE auctions.id = '$id'
+          GROUP BY auctions_id";
+          $result = mysqli_query($conn, $sql_query);
+          if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+              $highest_bid = $row['highest_bid'];
+              //debug($highest_bid);
+            }
+          }
+          ?>
         <form class="" action="single_auction.php?aucid=<?php echo $_GET['aucid'] ?>" method="post">
           <input type="number" name="bid_amount" value="" placeholder="Give bud her">
           <button type="submit" name="bid_button">Giv bud</button>
@@ -49,14 +66,14 @@ include('template/footer.php');
           if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
               if (isset($_POST['bid_button'])) {
-                if (!empty($_POST['bid_amount'])) {
+                if ($_POST['bid_amount'] > $highest_bid) {
                   $bid_amount = $_POST['bid_amount'];
-                  debug($bid_amount);
+                  //debug($bid_amount);
                   $user_id = $row['id'];
                   $sql = "INSERT INTO bids (id, amount, created_at, auctions_id, users_id) VALUES (NULL, '$bid_amount', CURRENT_TIMESTAMP, '$id', '$user_id')";
                   $run = mysqli_query($conn, $sql);
                 } else {
-                  echo "Kan ikke være tom";
+                  echo "Skal være højere end det sidste bud.";
                 }
               }
             }

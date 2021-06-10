@@ -16,7 +16,7 @@ session_start()
       <a class="logo" href="homepage.php" >IKEA<br><br>Auktion</a>
       <div class="navbar-right">
         <a href="categories.php">Kategorier</a>
-        <a href="create_auction.php">Opret auktion</a>
+        <a href="create_auction_item.php">Opret auktion</a>
         <a href="profile.php">Dine auktioner</a>
         <?php if (isset($_SESSION['username'])): ?>
           <a href="logout.php">Log ud</a>

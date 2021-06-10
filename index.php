@@ -4,6 +4,8 @@ include('functions.php');
 include('template/navbar.php');
 include('template/footer.php');
 
+header('Location: homepage.php')
+
  ?>
 
 

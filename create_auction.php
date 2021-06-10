@@ -22,30 +22,51 @@ if(isset($_FILES['image'])){
    }
 
    if($file_size > 2097152){
-      $errors[]='Filstørrelsen skal være nøjagtigt 2 MB';
+      $errors[]='Filstørrelsen skal være mindre end 2 MB';
    }
 
    if(empty($errors)==true){
       move_uploaded_file($file_tmp,"images/".$file_name);
-      echo "Det lykkedes";
+      echo "Oprettelse af item lykkedes";
    }else{
       print_r($errors);
    }
 }
 
-if (isset($_post["create_auction_button"])) {
-  $titel = $_POST["titel"];
-  $category = $_POST["category_id"];
-  $description = $_POST["description"];
-  $minimum_price = $_POST["minimum_price"];
-  $end_time = $_POST["end_time"];
-  $image = $_POST["image"];
+if (isset($_POST['create_item_button'])) {
+  $title = $_POST['title'];
+  $description = $_POST['description'];
+  $category_id = $_POST['category_id'];
 
-  $sql_query ="INSERT INTO `items` (`id`, `title`, `description`, `image`) VALUES (NULL, '$title', '$description', '$image')";
-  $run = mysqli_query($conn, $sql_query) or die();
-  header('location: profile.php');
+debug($title);
+debug($description);
+debug($category_id);
+
+  $sql = "INSERT INTO `items` (`id`, `title`, `description`, `image`, `cat_id`) VALUES (NULL, '$title', '$description', '$file_name', '$category_id')";
+  $run = mysqli_query($conn, $sql) or die();
+  $last_id = mysqli_insert_id($conn);
+debug($last_id);
 }
- ?>
+
+if (isset($_POST['create_auction_button'])) {
+  $min_price = $_POST['min_price'];
+  $expiration = $_POST['expiration'];
+  $items_id = $_POST['items_id'];
+      debug($items_id);
+  $username = $_SESSION['username'];
+  $sql = "SELECT id, username FROM users WHERE username='$username'";
+  $result = mysqli_query($conn, $sql);
+  if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+      $user_id = $row['id'];
+      $sql = "INSERT INTO `auctions` (`id`, `created_at`, `created_by_users_id`, `expiration`, `minimum_price`, `items_id`) VALUES (NULL, CURRENT_TIMESTAMP, '$user_id', '$expiration', '$min_price', '$items_id')";
+      $run = mysqli_query($conn, $sql);
+      header('Location: homepage.php');
+    }
+  }
+}
+
+?>
 
  <!DOCTYPE html>
  <html lang="en" dir="ltr">
@@ -55,38 +76,13 @@ if (isset($_post["create_auction_button"])) {
    </head>
    <body>
      <h1>Opret auktion</h1>
-     <form class="" action="create_auction.php" method="post"
-     <label for="">Titel:</label><br>
-     <input type="text" name="title" value="" placeholder="Titel"> <br><br>
-
-     <label for="category_id">Kategori:</label><br>
-     <select id="category_id" name="category_id">
-       <?php foreach(select_category() as $category) { ?>
-       <option value="<?php echo $category['id']; ?>">
-         <?php echo $category['category']; ?>
-       </option>
-       <?php } ?>
-     </select><br><br>
-
-     <label for="">Beskrivelse:</label><br>
-     <input type="text" name="description" value="" placeholder="Beskrivelse"> <br><br>
-     <label for="">Minimumspris:</label><br>
-     <input type="text" name="min_price" value="" placeholder="Minimumspris"> <br><br>
-     <label for="">Udløbstidspunkt:</label><br>
-     <input type="date" name="end_time" value="" placeholder="Udløbstidspunkt"> <br><br>
+     <form class="" action="create_auction.php" method="post">
+       <label for="">Minimums pris:</label><br>
+       <input type="number" name="min_price" value="" placeholder="Min pris" required> <br><br>
+       <label for="">Udløbstidspunkt:</label><br>
+       <input type="datetime-local" name="expiration" value="" placeholder="Dato" required> <br><br>
+       <input type="hidden" name="items_id" value="<?php echo $last_id ?>"> <br><br>
+       <button type="submit" name="create_auction_button">Opret auktion</button>
      </form>
-
-     <form action = "" method = "POST" enctype = "multipart/form-data" required>
-        <input type = "file" name = "image" />
-        <input type = "submit"/>
-
-        <ul>
-           <li>Sent file: <?php echo $_FILES['image']['name'];  ?>
-           <li>File size: <?php echo $_FILES['image']['size'];  ?>
-           <li>File type: <?php echo $_FILES['image']['type']; ?>
-        </ul>
-
-     </form>
-     <button type="submit" name="button">Opret auktion</button>
    </body>
  </html>
