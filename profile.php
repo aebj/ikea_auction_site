@@ -14,13 +14,12 @@ include('template/footer.php');
      <title>Dine auktioner</title>
    </head>
    <body>
+
      <?php $username = $_SESSION['username'];
      $sql = "SELECT username, first_name, last_name, phone_no, email FROM users WHERE username = '$username'";
      $result = mysqli_query($conn, $sql);
      if (mysqli_num_rows($result) > 0) {
        while ($row = mysqli_fetch_assoc($result)) {
-
-
       ?>
      <h1>Din profil</h1>
 
@@ -36,8 +35,8 @@ include('template/footer.php');
        <li>E-mail</li>
        <ul><?php echo $row['email']; ?> </ul>
      </div>
-     <div class="profile_data">
-
+     <div>
+       <?php profile_auction(); ?>
     </div>
 
 Her kan den enkelte bruger se et overblik over ens profil samt aktive og vundne auktioner

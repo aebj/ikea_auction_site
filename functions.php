@@ -83,6 +83,30 @@ function homepage_auctions() {
   }
 }
 
+
+function profile_auction() {
+  global $conn;
+  $sql = "SELECT items.title, auctions.expiration, MAX(bids.amount) AS highest_bid
+  FROM items
+  JOIN auctions
+  ON auctions.items_id = items.id
+  JOIN bids
+  ON bids.auctions_id = auctions.id
+  GROUP BY auctions_id";
+
+  $result = mysqli_query($conn, $sql);
+  if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+      echo '<tr>
+       <td>'.$row['title'].'</td>
+       <td>'.$row['expiration'].'</td>
+       <td>'.$row['highest_bid'].'</td>
+       </tr>';
+    }
+  }
+}
+
+
 //debug funktion til at tjekke data på en variable
 function debug($data) {
   echo '<pre>';
