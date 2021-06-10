@@ -29,7 +29,7 @@ include('template/footer.php');
        if (isset($_POST['category_button'])) {
          $category_id = $_POST['category'];
        }
-       $sql = "SELECT auctions.id, items.image, items.title, auctions.expiration, categories.category, categories.id
+       $sql = "SELECT auctions.id, items.image, items.title, auctions.expiration, categories.category
        FROM auctions
        JOIN items
        ON auctions.items_id = items.id
