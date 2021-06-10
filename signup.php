@@ -13,7 +13,7 @@ if (isset($_POST['create_user_button'])) {
   $password = $_POST['password'];
 
   $sql = "INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `phone_no`, `email`, `password`) VALUES (NULL, '$firstname', '$lastname', '$username', '$phone_no', '$email', '$password')";
-  $run = mysqli_query($conn, $sql_query) or die();
+  $run = mysqli_query($conn, $sql) or die();
   header('location: login.php');
 }
 ?>
