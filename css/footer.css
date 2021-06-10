@@ -1,0 +1,14 @@
+.footer {
+    background-color: #0055A3;
+    bottom:0;
+    border: 1px solid black;
+    padding: 5px;
+    padding-right: 935px;
+    position:fixed;
+    text-align: center;
+}
+
+.div {
+    ali:center
+    color: white;
+}
