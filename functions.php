@@ -43,26 +43,8 @@ GROUP BY auctions_id";
   }
 }*/
 
-function select_category() {
-  global $conn;
-//Vi laver en forespørgsel på id og type
-  $sql = "SELECT id, category FROM categories";
-  //Henter indholdet fra ovenstående
-  $result = mysqli_query($conn, $sql);
-  // Laver et tomt array
-  $category = [];
 
-  // Hvis mysqli er større end 0
-  if (mysqli_num_rows($result) > 0) {
-    // Databasen giver resultatet på forespørgelsen i $sql variablen
-    while($row = mysqli_fetch_assoc($result)) {
-      //Vi sikre at det kun er type og id som bliver vist
-      $category[] = $row;
-    }
-  }
 
-  return $category;
-}
 
 /*
 function homepage_auctions() {
@@ -106,7 +88,18 @@ function profile_auction() {
   }
 }
 
-
+function select_category(){
+  global $conn;
+  $sql = "SELECT id, category FROM categories";
+  $result = mysqli_query($conn, $sql);
+  $dropdown_category = [];
+  if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+      $dropdown_category[] = $row;
+    }
+}
+return $dropdown_category;
+}
 //debug funktion til at tjekke data på en variable
 function debug($data) {
   echo '<pre>';
