@@ -40,7 +40,7 @@ if (isset($_post["create_auction_button"])) {
 
   $sql_query ="INSERT INTO `items` (`id`, `title`, `description`, `image`) VALUES (NULL, '$title', '$description', '$image')";
   $run = mysqli_query($conn, $sql_query) or die();
-  header('location: profile.php')
+  header('location: profile.php');
 }
  ?>
 
