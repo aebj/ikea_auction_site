@@ -29,6 +29,19 @@ if(isset($_FILES['image'])){
       print_r($errors);
    }
 }
+
+if (isset($_post["create_auction_button"])) {
+  $titel = $_POST["titel"];
+  $category = $_POST["category_id"];
+  $description = $_POST["description"];
+  $minimum_price = $_POST["minimum_price"];
+  $end_time = $_POST["end_time"];
+  $image = $_POST["image"];
+
+  $sql_query ="INSERT INTO `items` (`id`, `title`, `description`, `image`) VALUES (NULL, '$title', '$description', '$image')";
+  $run = mysqli_query($conn, $sql_query) or die();
+  header('location: profile.php')
+}
  ?>
 
  <!DOCTYPE html>
@@ -39,7 +52,7 @@ if(isset($_FILES['image'])){
    </head>
    <body>
      <h1>Opret auktion</h1>
-     <form class="" action="index.html" method="post"
+     <form class="" action="create_auction.php" method="post"
      <label for="">Titel:</label><br>
      <input type="text" name="title" value="" placeholder="Titel"> <br><br>
 
@@ -53,7 +66,7 @@ if(isset($_FILES['image'])){
      </select><br><br>
 
      <label for="">Beskrivelse:</label><br>
-     <input type="text" name="describtion" value="" placeholder="Beskrivelse"> <br><br>
+     <input type="text" name="description" value="" placeholder="Beskrivelse"> <br><br>
      <label for="">Minimumspris:</label><br>
      <input type="text" name="min_price" value="" placeholder="Minimumspris"> <br><br>
      <label for="">Udløbstidspunkt:</label><br>
@@ -67,7 +80,7 @@ if(isset($_FILES['image'])){
         <ul>
            <li>Sent file: <?php echo $_FILES['image']['name'];  ?>
            <li>File size: <?php echo $_FILES['image']['size'];  ?>
-           <li>File type: <?php echo $_FILES['image']['type'] ?>
+           <li>File type: <?php echo $_FILES['image']['type']; ?>
         </ul>
 
      </form>
