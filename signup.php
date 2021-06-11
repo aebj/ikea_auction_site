@@ -2,7 +2,6 @@
 
 include('functions.php');
 include('template/navbar.php');
-include('template/footer.php');
 
 if (isset($_POST['create_user_button'])) {
   $username = $_POST['username'];
@@ -41,5 +40,6 @@ if (isset($_POST['create_user_button'])) {
           <input type="password" name="password" value="" placeholder="Adgangskode" required> <br><br>
           <button type="submit" name="create_user_button">Opret bruger</button>
         </form>
+        <?php include('template/footer.php'); ?>
       </body>
     </html>

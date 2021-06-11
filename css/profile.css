@@ -1,10 +1,17 @@
+#active_auctions {
+  text-align: center;
+}
 
 .profile_data{
   border: 1px solid black;
   border-spacing: 50px;
   padding: 25px;
-  background-color: #0055A3;
+  background-color: #F3D232;
   float: right;
   position: relative;
   top: -220px;
+}
+
+table {
+  text-align: center;
 }

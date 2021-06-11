@@ -2,7 +2,6 @@
 
 include('functions.php');
 include('template/navbar.php');
-include('template/footer.php');
 
 if(isset($_FILES['image'])){
    $errors= array();
@@ -66,17 +65,19 @@ if (isset($_POST['create_auction_button'])) {
  <html lang="en" dir="ltr">
    <head>
      <meta charset="utf-8">
+     <link rel="stylesheet" href="css/create_auction.css">
      <title>Opret auktion</title>
    </head>
    <body>
      <h1>Opret auktion</h1>
      <form class="" action="create_auction.php" method="post">
        <label for="">Minimums pris:</label><br>
-       <input type="number" name="min_price" value="" placeholder="Min pris" required> <br><br>
+       <input type="number" name="min_price" value="" placeholder="" required> <br><br>
        <label for="">Udløbstidspunkt:</label><br>
        <input type="datetime-local" name="expiration" value="" placeholder="Dato" required> <br><br>
        <input type="hidden" name="items_id" value="<?php echo $last_id ?>"> <br><br>
        <button type="submit" name="create_auction_button">Opret auktion</button>
      </form>
+     <?php include('template/footer.php'); ?>
    </body>
  </html>

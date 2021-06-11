@@ -14,15 +14,17 @@
         <tr class="text">
 
            <th>Åbningstider<hr>Varehuset:
-             Alle ugens dage kl. 10-20
-             Bistro: Alle ugens dage kl. 10-20
-             Restaurant: Lukket
+             Alle ugens dage kl. 10-20 <br>
+             Bistro: Alle ugens dage kl. 10-20 <br>
+             Restaurant: Lukket <br>
              SMÅLAND: Lukket</th>
 
            <th>Kundeservice<hr>
-            Telefon: 70 15 09 09
-            Mandag - fredag: 9 - 20
-            Lørdag - søndag: 9 - 18</th>
+            Telefon: 70 15 09 09 <br>
+            Mandag - fredag: 9 - 20 <br>
+            Lørdag - søndag: 9 - 18 <br>
+            Helligdage: Lukket
+          </th>
          </tr>
        </div>
       </table>

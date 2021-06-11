@@ -2,7 +2,6 @@
 
 include('functions.php');
 include('template/navbar.php');
-include('template/footer.php');
 
 if ( isset( $_SESSION['username'] ) ) {
 }
@@ -37,7 +36,7 @@ if ( isset( $_SESSION['username'] ) ) {
      </div>
      </table>
      <div class="profile_data">
-       <h3>Aktive auktioner</h3>
+       <h3 id = active_auctions>Aktive auktioner</h3>
         <table>
           <tr>
              <th>Titel<hr></th>
@@ -48,5 +47,6 @@ if ( isset( $_SESSION['username'] ) ) {
        </table>
      </div>
     <?php } } ?>
+    <?php include('template/footer.php'); ?>
    </body>
  </html>

@@ -2,7 +2,6 @@
 
 include('functions.php');
 include('template/navbar.php');
-include('template/footer.php');
 
 if(isset($_POST['login_button'])){
 
@@ -30,6 +29,7 @@ if(isset($_POST['login_button'])){
  <html lang="en" dir="ltr">
    <head>
      <meta charset="utf-8">
+     <link rel="stylesheet" href="css/login.css">
      <title>Log ind</title>
    </head>
    <body>
@@ -39,16 +39,19 @@ if(isset($_POST['login_button'])){
             <h1>Log ind</h1>
               <div>
                 <input type="text" name="username" placeholder="Brugernavn">
-              </div>
+              </div> <br>
               <div>
                 <input type="password" name="password" placeholder="Adgangskode">
-              </div>
+              </div> <br>
               <div>
-                <input type="submit" value="Log ind" name="login_button">
+                <button type="submit" value="Log ind" name="login_button">Log ind</button>
               </div>
-            </div>
+            </div><br>
+            <lu>Mangler du en bruger?</lu><br>
+            <a href="signup.php">Opret bruger her</a>
           </form>
-          <a href="signup.php">Opret bruger</a>
+
         </div>
+        <?php include('template/footer.php'); ?>
       </body>
     </html>

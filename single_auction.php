@@ -2,7 +2,6 @@
 
 include('functions.php');
 include('template/navbar.php');
-include('template/footer.php');
 
  ?>
 
@@ -100,6 +99,6 @@ include('template/footer.php');
       </div>
 <?php  }
   } ?>
-
+    <?php include('template/footer.php'); ?>
    </body>
  </html>
